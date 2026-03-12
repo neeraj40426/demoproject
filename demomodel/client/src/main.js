@@ -42,7 +42,19 @@ socket.on("roomJoined", (roomId) => {
   currentRoom = roomId;
   document.getElementById("roomDisplay").innerText = "Joined Room: " + roomId;
 });
+let role = null;
 
+socket.on("role",(r)=>{
+  role = r;
+
+  if(role === "host"){
+    document.getElementById("controlsPanel").style.display = "none";
+  }
+
+  if(role === "player"){
+    document.getElementById("game").style.display = "none";
+  }
+});
 const config = {
   type: Phaser.AUTO,
   width: 800,

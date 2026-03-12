@@ -14,7 +14,7 @@ socket.on("stateUpdate",(players)=>{
 Object.keys(players).forEach((id)=>{
 
 const p = players[id];
-
+if(p.isHost) return;
 if(!this.players[id]){
 
 this.players[id]=this.add.rectangle(

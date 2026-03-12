@@ -21,12 +21,9 @@ socket.on("createRoom", () => {
   socket.join(roomId);
 
   rooms[roomId][socket.id] = {
-    x: Math.random()*700,
-    y: Math.random()*500,
-    vx: 0,
-    vy: 0
+    isHost: true
   };
-
+  socket.emit("role","host");
   socket.emit("roomCreated", roomId);
 
 });
@@ -41,9 +38,10 @@ rooms[roomId][socket.id]={
 x:Math.random()*700,
 y:Math.random()*500,
 vx:0,
-vy:0
+vy:0,
+isHost: false
 };
-
+socket.emit("role","player");
 socket.emit("roomJoined",roomId);
 
 });

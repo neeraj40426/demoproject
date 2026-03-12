@@ -110,25 +110,29 @@ button:active{
 <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.js"></script>
 <script type="module" src="src/main.js"></script>
 
+<div id="controlsPanel" class="panel">
 
 <h3>Controls</h3>
 
 <div class="controls">
 
 <div></div>
-<button onmousedown="startMove('up')" onmouseup="stopMove()">↑</button>
+<button ontouchstart="startMove('up')" ontouchend="stopMove()">↑</button>
 <div></div>
 
-<button onmousedown="startMove('left')" onmouseup="stopMove()">←</button>
+<button ontouchstart="startMove('left')" ontouchend="stopMove()">←</button>
 <div></div>
-<button onmousedown="startMove('right')" onmouseup="stopMove()">→</button>
+<button ontouchstart="startMove('right')" ontouchend="stopMove()">→</button>
 
 <div></div>
-<button onmousedown="startMove('down')" onmouseup="stopMove()">↓</button>
+<button ontouchstart="startMove('down')" ontouchend="stopMove()">↓</button>
 <div></div>
 
 </div>
 
 </div>
+
+<div id="game"></div>
+
 </body>
 </html>
