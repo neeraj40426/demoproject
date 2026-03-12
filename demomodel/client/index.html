@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiplayer Prototype</title>
+  <style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg,#1e1e2f,#12121a);
+  color:white;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+}
+
+h2{
+  margin-top:20px;
+  letter-spacing:1px;
+}
+
+.panel{
+  background:#1f1f2e;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  margin:15px;
+  text-align:center;
+  width:280px;
+}
+
+input{
+  padding:8px;
+  border:none;
+  border-radius:6px;
+  outline:none;
+  margin-right:6px;
+  width:120px;
+}
+
+button{
+  padding:10px 16px;
+  border:none;
+  border-radius:6px;
+  background:#4e7cff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+  transition:all 0.2s ease;
+}
+
+button:hover{
+  background:#355dff;
+  transform:scale(1.05);
+}
+
+button:active{
+  transform:scale(0.95);
+}
+
+.controls{
+  display:grid;
+  grid-template-columns:60px 60px 60px;
+  gap:10px;
+  justify-content:center;
+  margin-top:10px;
+}
+
+.controls button{
+  font-size:18px;
+  width:60px;
+  height:50px;
+}
+
+#roomDisplay{
+  margin-top:10px;
+  font-weight:bold;
+  color:#6df1a5;
+}
+
+#game{
+  margin-top:20px;
+  border:3px solid #2c2c3f;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+</style>
+</head>
+
+<body>
+<h2>Multiplayer Prototype</h2>
+
+<div class="panel">
+
+<button onclick="createRoom()">Create Room</button>
+
+<br><br>
+
+<input id="roomInput" placeholder="Room ID">
+<button onclick="joinRoom()">Join Room</button>
+
+<p id="roomDisplay"></p>
+
+</div>
+
+
+<div id="game"></div>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.js"></script>
+<script type="module" src="src/main.js"></script>
+
+
+<h3>Controls</h3>
+
+<div class="controls">
+
+<div></div>
+<button onmousedown="startMove('up')" onmouseup="stopMove()">↑</button>
+<div></div>
+
+<button onmousedown="startMove('left')" onmouseup="stopMove()">←</button>
+<div></div>
+<button onmousedown="startMove('right')" onmouseup="stopMove()">→</button>
+
+<div></div>
+<button onmousedown="startMove('down')" onmouseup="stopMove()">↓</button>
+<div></div>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,17 +1,16 @@
 {
-  "name": "server",
+  "name": "demomodel",
   "version": "1.0.0",
   "description": "",
-  "main": "ws.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ws.js"
-  },
-  "dependencies": {
-    "ws": "^8.16.0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "socket.io": "^4.8.3"
+  }
 }
